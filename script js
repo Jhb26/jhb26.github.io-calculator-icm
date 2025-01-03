@@ -1,0 +1,32 @@
+const hitungButton = document.getElementById('hitung');
+const hasilElement = document.getElementById('hasil');
+
+hitungButton.addEventListener('click', function(e) {
+  e.preventDefault();
+  const berat = parseFloat(document.getElementById('berat').value);
+  const tinggi = parseFloat(document.getElementById('tinggi').value);
+
+  if (isNaN(berat) || isNaN(tinggi) || berat <= 0 || tinggi <= 0) {
+    hasilElement.textContent = 'Silakan masukkan nilai yang valid.';
+    return;
+  }
+
+  const bmi = berat / (tinggi * tinggi);
+  let klasifikasi = '';
+
+  if (bmi < 18.5) {
+    klasifikasi = 'Kurus';
+  } else if (bmi < 24.9) {
+    klasifikasi = 'Normal';
+  } else if (bmi < 29.9) {
+    klasifikasi = 'Kelebihan Berat Badan';
+  } else if (bmi < 34.9) {
+    klasifikasi = 'Obesitas Tingkat 1';
+  } else if (bmi < 39.9) {
+    klasifikasi = 'Obesitas Tingkat 2';
+  } else {
+    klasifikasi = 'Obesitas Morbid';
+  }
+
+  hasilElement.textContent = `BMI Anda adalah ${bmi.toFixed(2)} (${klasifikasi})`;
+});

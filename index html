@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Kalkulator BMI</title>
+</head>
+<body>
+  <main class="container">
+    <h1 class="judul">Kalkulator BMI</h1>
+    <form action="#" method="post" id="form-bmi">
+      <legend>Hitung BMI Anda</legend>
+      <div class="input-group">
+        <label for="berat">Berat (kg)</label>
+        <input type="number" id="berat" required aria-label="Masukkan berat" autocomplete="off">
+      </div>
+      <div class="input-group">
+        <label for="tinggi">Tinggi (m)</label>
+        <input type="number" id="tinggi" required aria-label="Masukkan tinggi" autocomplete="off">
+      </div>
+      <button id="hitung" class="btn-hitung">Hitung</button>
+    </form>
+    <hr>
+    <p id="hasil" class="hasil"></p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
